@@ -26,7 +26,7 @@ fi
 # Publish the npm module
 npm publish
 
-IMAGE_NAME="dashpay/insight"
+IMAGE_NAME="xazab/insight"
 
 MAJOR_VERSION="$( cut -d '.' -f 1 <<< "$VERSION" )"
 

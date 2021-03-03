@@ -22,9 +22,9 @@ describe('basic UI tests', () => {
 
     const insightUIContainerOptions = {
       volumes: [
-        `${rootPath}/dashcore-node:/insight/node_modules/@dashevo/insight-ui/dashcore-node`,
-        `${rootPath}/po:/insight/node_modules/@dashevo/insight-ui/po`,
-        `${rootPath}/public:/insight/node_modules/@dashevo/insight-ui/public`,
+        `${rootPath}/xazabcore-node:/insight/node_modules/@xazabevo/insight-ui/xazabcore-node`,
+        `${rootPath}/po:/insight/node_modules/@xazabevo/insight-ui/po`,
+        `${rootPath}/public:/insight/node_modules/@xazabevo/insight-ui/public`,
       ],
     };
 
@@ -39,7 +39,7 @@ describe('basic UI tests', () => {
 
     url = `http://127.0.0.1:${masterNode.insightUi.options.getUiPort()}/insight/`;
 
-    await masterNode.dashCore.getApi().generate(15);
+    await masterNode.xazabCore.getApi().generate(15);
   });
 
   afterAll(async () => {
@@ -168,7 +168,7 @@ describe('basic UI tests', () => {
       expect(height).equal(`${blockIdToSearch} (Mainchain)`);
 
       const blockReward = await blockPage.getBlockReward();
-      expect(blockReward).equal('500 DASH');
+      expect(blockReward).equal('500 XAZAB');
 
       const timestamp = await blockPage.getTimestamp();
       expect(timestamp).not.equal('');
@@ -211,7 +211,7 @@ describe('basic UI tests', () => {
       expect(height).equal(`${blockIdToSearch} (Mainchain)`);
 
       const blockReward = await blockPage.getBlockReward();
-      expect(blockReward).equal('500 DASH');
+      expect(blockReward).equal('500 XAZAB');
 
       const timestamp = await blockPage.getTimestamp();
       expect(timestamp).not.equal('');
